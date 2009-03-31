@@ -1,4 +1,5 @@
-package DBIx::CheckConnectivity::Driver::mysql;
+package DBIx::CheckConnectivity::Driver::Oracle;
+
 use warnings;
 use strict;
 use base qw/DBIx::CheckConnectivity::Driver/;
@@ -9,7 +10,7 @@ __END__
 
 =head1 NAME
 
-DBIx::CheckConnectivity::mysql - 
+DBIx::CheckConnectivity::Oracle - 
 
 =head1 INTERFACE
 

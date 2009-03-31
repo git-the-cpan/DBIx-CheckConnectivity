@@ -12,7 +12,9 @@ inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/DBIx/CheckConnectivity.pm
+lib/DBIx/CheckConnectivity/Driver.pm
 lib/DBIx/CheckConnectivity/Driver/mysql.pm
+lib/DBIx/CheckConnectivity/Driver/Oracle.pm
 lib/DBIx/CheckConnectivity/Driver/Pg.pm
 lib/DBIx/CheckConnectivity/Driver/SQLite.pm
 Makefile.PL

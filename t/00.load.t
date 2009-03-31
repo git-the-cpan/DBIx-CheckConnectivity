@@ -1,10 +1,17 @@
-use Test::More tests => 4;
+use Test::More;
+use File::Spec::Functions qw/catfile catdir/;
+use File::Basename qw( dirname );
 
-BEGIN {
-use_ok( 'DBIx::CheckConnectivity' );
-use_ok( 'DBIx::CheckConnectivity::Driver::Pg' );
-use_ok( 'DBIx::CheckConnectivity::Driver::mysql' );
-use_ok( 'DBIx::CheckConnectivity::Driver::SQLite' );
+my $manifest = catdir( dirname(__FILE__), '..', 'MANIFEST' );
+plan skip_all => 'MANIFEST does not exist' unless -e $manifest;
+open my $fh, '<', $manifest;
+
+my @pms = map { s|^lib/||; chomp; $_ } grep { m|^lib/.*pm$| } <$fh>;
+
+plan tests => scalar @pms;
+for my $pm (@pms) {
+    $pm =~ s|\.pm$||;
+    $pm =~ s|/|::|g;
+
+    use_ok($pm);
 }
-
-diag( "Testing DBIx::CheckConnectivity $DBIx::CheckConnectivity::VERSION" );

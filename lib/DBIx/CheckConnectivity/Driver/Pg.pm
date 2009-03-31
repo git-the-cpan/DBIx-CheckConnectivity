@@ -2,14 +2,7 @@ package DBIx::CheckConnectivity::Driver::Pg;
 
 use warnings;
 use strict;
-
-sub system_database {
-    return 'template1';
-}
-
-sub not_exist_error {
-    return qr/not exist/i;
-}
+use base qw/DBIx::CheckConnectivity::Driver/;
 
 1;
 
@@ -22,14 +15,6 @@ DBIx::CheckConnectivity::Pg -
 =head1 INTERFACE
 
 =over 4
-
-=item system_database
-
-return 'template1'
-
-=item not_exist_error
-
-return qr/not exist/
 
 =back
 

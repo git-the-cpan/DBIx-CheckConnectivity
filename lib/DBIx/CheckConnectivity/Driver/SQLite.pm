@@ -1,10 +1,7 @@
 package DBIx::CheckConnectivity::Driver::SQLite;
-
 use warnings;
 use strict;
-
-sub system_database { }
-sub not_exist_error { }
+use base qw/DBIx::CheckConnectivity::Driver/;
 
 1;
 
@@ -17,14 +14,6 @@ DBIx::CheckConnectivity::SQLite -
 =head1 INTERFACE
 
 =over 4
-
-=item system_database
-
-SQLite does not have system_database, return undef
-
-=item not_exist_error
-
-SQLite does not have not exist error, normally, it just create the file
 
 =back
 
